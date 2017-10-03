@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Wall.qml</file>
+        <file>BoxBody.qml</file>
+        <file>DynamicBox.qml</file>
+    </qresource>
+</RCC>
