@@ -21,37 +21,34 @@ WaylandCompositor {
                     x: Math.random() * (window.width - waylandItem.width)
                     surface: modelData.surface
                     BoxBody {
+                        target: waylandItem
                         bodyType: Body.Dynamic
                         density: 1
                         friction: 0.3
                         restitution: 0.5
-                        height: waylandItem.height
-                        width: waylandItem.width
-                        target: waylandItem
                     }
                     onSurfaceDestroyed: {
                         shellSurfaces.remove(index);
                     }
                 }
             }
-            Wall {
-                color: "blue"
+            Rectangle {
+                color: "lightsteelblue"
                 id: ground
-                height: 20
+                height: 10
                 width: parent.width * 0.5
                 anchors.horizontalCenter: parent.horizontalCenter
                 y: parent.height * 0.7
+                BoxBody { target: ground }
             }
             Rectangle {
                 id: fire
                 color: "red"
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
-                height: 20
+                height: 10
                 width: parent.width * 5
                 BoxBody {
-                    width: fire.width
-                    height: fire.height
                     target: fire
                     onBeginContact: {
                         var waylandItem = other.getBody().target;
