@@ -35,7 +35,7 @@ WaylandCompositor {
             Rectangle {
                 color: "lightsteelblue"
                 id: ground
-                height: 10
+                height: parent.height * 0.3
                 width: parent.width * 0.5
                 anchors.horizontalCenter: parent.horizontalCenter
                 y: parent.height * 0.7
